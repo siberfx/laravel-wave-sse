@@ -13,8 +13,7 @@ class BroadcastingEvent
         public string|array $data,
         public ?string $id,
         public ?string $socket,
-    ) {
-    }
+    ) {}
 
     public function send(): void
     {

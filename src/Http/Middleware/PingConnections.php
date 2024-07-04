@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class PingConnections
 {
-    public function __construct(protected BroadcastEventHistory $eventHistory)
-    {
-    }
+    public function __construct(protected BroadcastEventHistory $eventHistory) {}
 
     /**
      * Handle an incoming request.
