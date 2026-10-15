@@ -20,7 +20,7 @@ class PingConnections
     public function handle(Request $request, Closure $next): Response
     {
         if ($this->shouldSendPing()) {
-            event(new SsePingEvent());
+            event(new SsePingEvent);
         }
 
         return $next($request);

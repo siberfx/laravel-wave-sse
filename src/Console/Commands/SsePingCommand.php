@@ -23,11 +23,11 @@ class SsePingCommand extends Command
 
     public function handle()
     {
-        $interval = $this->option('interval');
+        $interval = (int) $this->option('interval');
 
-        if ($interval) {
+        if ($interval !== 0) {
             while (true) {
-                event(new SsePingEvent());
+                event(new SsePingEvent);
 
                 $this->components->twoColumnDetail('<fg=gray>'.now().'</> SSE Wave Connections', '<fg=green;options=bold>PINGED</>');
 
@@ -36,7 +36,7 @@ class SsePingCommand extends Command
         } else {
             $this->components->twoColumnDetail('<fg=gray>'.now().'</> SSE Wave Connections', '<fg=green;options=bold>PINGED</>');
 
-            event(new SsePingEvent());
+            event(new SsePingEvent);
         }
     }
 }
